@@ -1,0 +1,22 @@
+localisation:
+  buttons:
+    special-action: 'Special Action'
+  errors:
+    incorrect-locale: 'Incorrect Locale: %locale%'
+  entity:
+    fields:
+      some-field: 'My field'
+  form:
+    labels:
+      some-text-input: 'The Text Input'
+    tooltip:
+      some-text-input: 'Some longer description of input'
+  locale:
+    english-gb: 'English (UK)'
+    english-us: 'English (US)'
+    polish-pl: 'Polish'
+  messages:
+    succes:
+      some-action: 'some action did work'
+  title:
+    some-page: 'Title of some page'

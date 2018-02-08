@@ -1,0 +1,13 @@
+<h1>Your lucky number is {{ number }}</h1>
+<a
+        href="{{ path("language_change", {'locale':  'en_US'}) }}">
+    {{ "localisation.locale.english-us" | trans }}
+</a>
+<a
+        href="{{ path("language_change", {'locale':  'en_GB'}) }}">
+    {{ "localisation.locale.english-gb" | trans }}
+</a>
+<a
+        href="{{ path("language_change", {'locale':  'pl_PL'}) }}">
+    {{ "localisation.locale.polish-pl" | trans }}
+</a>
