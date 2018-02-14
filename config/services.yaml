@@ -17,7 +17,7 @@ fos_user:
 services:
     app.event_subscriber.locale_subscriber:
         class: App\EventSubscriber\LocaleSubscriber
-        arguments: ['@router', '%locale%']
+        arguments: ['@router']
         tags:
             - { name: kernel.event_subscriber }
 

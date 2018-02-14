@@ -20,20 +20,13 @@ class LocaleSubscriber implements EventSubscriberInterface
     private $router;
 
     /**
-     * @var string
-     */
-    private $defaultLocale;
-
-    /**
      * LocaleSubscriber constructor.
      *
      * @param Router $router
-     * @param string $defaultLocale
      */
-    public function __construct(Router $router, string $defaultLocale)
+    public function __construct(Router $router)
     {
         $this->router = $router;
-        $this->defaultLocale = $defaultLocale;
     }
 
     /**
