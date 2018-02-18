@@ -77,7 +77,7 @@ localisation:
     english-us: 'English (US)'
     polish-pl: 'Polish'
   messages:
-    succes:
+    success:
       article-added: 'New article was added'
   title:
     article-list: 'Article List'

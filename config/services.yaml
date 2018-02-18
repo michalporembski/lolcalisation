@@ -21,6 +21,13 @@ services:
         tags:
             - { name: kernel.event_subscriber }
 
+    app.repository.article:
+        class: App\Repository\ArticleRepository
+        public: true
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - App\Entity\Article
+
     # default configuration for services in *this* file
     _defaults:
         autowire: false      # Automatically injects dependencies in your services.

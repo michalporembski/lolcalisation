@@ -2,6 +2,7 @@
 
 namespace App\EventSubscriber;
 
+use App\Services\Locale;
 use Symfony\Bundle\FrameworkBundle\Routing\Router;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
@@ -39,6 +40,9 @@ class LocaleSubscriber implements EventSubscriberInterface
             return;
         }
         $locale = $request->getSession()->get('_locale');
+        if (!isset(Locale::class)) {
+            return;
+        }
         $request->setLocale($locale);
         $request->getSession()->set('_locale', $locale);
     }

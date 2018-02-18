@@ -1,22 +1,25 @@
 localisation:
   buttons:
-    special-action: 'Special Action'
+#    article-add: 'Add Article'
+    search: 'Search'
   errors:
     incorrect-locale: 'Incorrect Locale: %locale%'
   entity:
     fields:
-      some-field: 'My field'
+      author: 'Author'
+      title: 'Title'
   form:
     labels:
-      some-text-input: 'The Text Input'
-    tooltip:
-      some-text-input: 'Some longer description of input'
+      author: 'author'
+      title: 'title'
+#    tooltip:
+#      content: 'Type article content'
   locale:
     english-gb: 'English (UK)'
     english-us: 'English (US)'
     polish-pl: 'Polish'
-  messages:
-    succes:
-      some-action: 'some action did work'
-  title:
-    some-page: 'Title of some page'
+#  messages:
+#    success:
+#      article-added: 'New article was added'
+#  title:
+#    article-list: 'Article List'
