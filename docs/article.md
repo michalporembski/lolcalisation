@@ -250,17 +250,51 @@ Niebanalnym problemem jest poprawne dobranie formy tłumaczenia w zależności o
 * Znaleziono 2 wyniki
 * Znaleziono 5 wyników
 
-W różnych językach panują różne zasady, na szczęście w Symfony jest dostępny mechanizm `transchoice`. Aby poprawnie przetłumaczyć taki komunikat wystarczy w szablonie użyć prostego:
+W różnych językach panują różne zasady, na szczęście w Symfony jest dostępny mechanizm `transchoice`. Aby przetłumaczyć taki komunikat wystarczy w szablonie użyć prostego:
 ```
 {% transchoice items|length %}
-    localisation.message.found-records
+    localisation.messages.found-records
 {% endtranschoice %} 
 ```
 
-Dodatkowo musimy dodać stosowne tłumaczenia, do pliku tłumaczeń, dla języka polskiego byłoby to:
+Dodatkowo musimy dodać stosowne tłumaczenia w którym dokładnie określimy zakresy wartości dla jakich ma być wybierana stosowna wartość:
+
 ```
-  message:
+  messages:
     found-records: '{0}Nie znaleziono wyników|{1}Znaleziono 1 wynik|]1,5[Znaleziono %count% wyniki|]4,Inf[Znaleziono %count% wyników'
+```
+
+To bardzo proste rozwiązanie prawie rozwiązuje problem liczby mnogiej. Wnikliwy czytelnik jednak zauważy że takie rozwiązanie nie zawsze zadziała poprawnie. Już w przypadku gdy wyświetlane będą 22 wyniki wyświetlany komunikat będzie błędny.
+
+Aby w poprawny sposób wyświetlić ten komunikat musimy do metody `transchoice` przekazać nie ilość rekordów, lecz liczbę która wskaże na to którego tłumaczenia należy użyć, oraz samą ilość jako dodatkowy parametr. Tak więc nasze tłumaczenie powinno wyglądać w następujący sposób:
+
+```
+  messages:
+    found-records: '{0}Nie znaleziono wyników|{1}Znaleziono 1 wynik|{2}Znaleziono %number% wyniki|{3}Znaleziono %number% wyników'
+```
+
+Zaś stosownie od ilości wyników musimy zastosować odpowiednią formę:
+
+```
+{{ 'localisation.messages.found-records'|transchoice(0, {'%number%': number}) }}<br>
+{{ 'localisation.messages.found-records'|transchoice(1, {'%number%': number}) }}<br>
+{{ 'localisation.messages.found-records'|transchoice(2, {'%number%': number}) }}<br>
+{{ 'localisation.messages.found-records'|transchoice(3, {'%number%': number}) }}<br>
+```
+
+Aby poprawnie wybrać tłumaczenie, potrzebna będzie jeszcze odrobina logiki która się tym zajmie. Niezależnie gdzie umieścimy tę logikę, musimy pamiętać że dla różnych języków będzie ona różna. Metoda która sprawdzałaby którą formę należy użyć mogłaby wyglądać następująco:
+
+```
+    private function getPolishPrularForm(int $number)
+    {
+        if ($number === 0 || $number === 1) {
+            return $number;
+        } elseif ($number % 10 >= 2 && $number % 10 <= 4 && ($number % 100 < 10 || $number % 100 > 20)) {
+            return 2;
+        }
+
+        return 3;
+    }
 ```
 
 ##Formatowanie dat

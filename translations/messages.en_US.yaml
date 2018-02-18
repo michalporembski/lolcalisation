@@ -18,7 +18,9 @@ localisation:
     english-gb: 'English (UK)'
     english-us: 'English (US)'
     polish-pl: 'Polish'
-#  messages:
+  messages:
+    other:
+      found-records: '{0}Nie znaleziono wyników|{1}Znaleziono 1 wynik|{2}Znaleziono %number% wyniki|{3}Znaleziono %number% wyników'
 #    success:
 #      article-added: 'New article was added'
 #  title:

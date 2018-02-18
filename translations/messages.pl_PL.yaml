@@ -1,1 +1,27 @@
-#TODO
+localisation:
+  buttons:
+#    article-add: 'Add Article'
+    search: 'Search'
+  errors:
+    incorrect-locale: 'Incorrect Locale: %locale%'
+  entity:
+    fields:
+      author: 'Author'
+      title: 'Title'
+  form:
+    labels:
+      author: 'author'
+      title: 'title'
+#    tooltip:
+#      content: 'Type article content'
+  locale:
+    english-gb: 'English (UK)'
+    english-us: 'English (US)'
+    polish-pl: 'Polish'
+  messages:
+    other:
+      found-records: 'Nie znaleziono wyników|Znaleziono 1 wynik|Znaleziono %number% wyniki|Znaleziono %number% wyników'
+#    success:
+#      article-added: 'New article was added'
+#  title:
+#    article-list: 'Article List'

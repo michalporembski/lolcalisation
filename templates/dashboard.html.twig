@@ -1,4 +1,6 @@
 <h1>Your lucky number is {{ number }}</h1>
+
+{{ 'localisation.messages.other.found-records'|transchoice(prularForm, {'%number%': number}) }}<br>
 <a
         href="{{ path("language_change", {'locale':  'en_US'}) }}">
     {{ "localisation.locale.english-us" | trans }}

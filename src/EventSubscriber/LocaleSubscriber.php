@@ -40,7 +40,7 @@ class LocaleSubscriber implements EventSubscriberInterface
             return;
         }
         $locale = $request->getSession()->get('_locale');
-        if (!isset(Locale::class)) {
+        if (!isset(Locale::AVAILABLE_LOCALES[$locale])) {
             return;
         }
         $request->setLocale($locale);
