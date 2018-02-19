@@ -20,7 +20,7 @@ localisation:
     polish-pl: 'Polish'
   messages:
     other:
-      found-records: '{0}Nie znaleziono wyników|{1}Znaleziono 1 wynik|{2}Znaleziono %number% wyniki|{3}Znaleziono %number% wyników'
+      found-records: '{0}No record found|{1}Found 1 record|{2}Found %number% records'
 #    success:
 #      article-added: 'New article was added'
 #  title:

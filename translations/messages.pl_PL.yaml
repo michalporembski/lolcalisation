@@ -1,26 +1,26 @@
 localisation:
   buttons:
 #    article-add: 'Add Article'
-    search: 'Search'
+    search: 'Szukaj'
   errors:
-    incorrect-locale: 'Incorrect Locale: %locale%'
+    incorrect-locale: 'Błędna wersja językowa: %locale%'
   entity:
     fields:
-      author: 'Author'
-      title: 'Title'
+      author: 'Autor'
+      title: 'Tytuł'
   form:
     labels:
-      author: 'author'
-      title: 'title'
+      author: 'Autor'
+      title: 'Tytuł'
 #    tooltip:
 #      content: 'Type article content'
   locale:
-    english-gb: 'English (UK)'
-    english-us: 'English (US)'
-    polish-pl: 'Polish'
+    english-gb: 'Angielski (UK)'
+    english-us: 'Angielski (US)'
+    polish-pl: 'Polski'
   messages:
     other:
-      found-records: 'Nie znaleziono wyników|Znaleziono 1 wynik|Znaleziono %number% wyniki|Znaleziono %number% wyników'
+      found-records: '{0}Nie znaleziono wyników|{1}Znaleziono 1 wynik|{2}Znaleziono %number% wyniki|{3}Znaleziono %number% wyników'
 #    success:
 #      article-added: 'New article was added'
 #  title:

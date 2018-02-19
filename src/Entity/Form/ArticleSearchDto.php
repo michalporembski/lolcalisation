@@ -2,6 +2,7 @@
 
 namespace App\Entity\Form;
 
+use App\Controller\ArticleController;
 use App\Entity\User;
 
 /**
@@ -34,7 +35,7 @@ class ArticleSearchDto
     /**
      * @return null|string
      */
-    public function getTitle(): string
+    public function getTitle()
     {
         return $this->title;
     }
@@ -42,7 +43,7 @@ class ArticleSearchDto
     /**
      * @param null|string $title
      */
-    public function setTitle(string $title)
+    public function setTitle($title)
     {
         $this->title = $title;
     }
@@ -50,7 +51,7 @@ class ArticleSearchDto
     /**
      * @return User|null
      */
-    public function getAuthor(): User
+    public function getAuthor()
     {
         return $this->author;
     }
@@ -58,7 +59,7 @@ class ArticleSearchDto
     /**
      * @param User|null $author
      */
-    public function setAuthor(User $author)
+    public function setAuthor($author)
     {
         $this->author = $author;
     }
@@ -106,6 +107,6 @@ class ArticleSearchDto
      */
     public function getNumberOfPages(): int
     {
-        return ceil($this->itemCount / TrainingController::ITEMS_PER_PAGE);
+        return ceil($this->itemCount / ArticleController::ITEMS_PER_PAGE);
     }
 }

@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+<ul>
+    <li>
+        <a
+                href="{{ path("language_change", {'locale':  'en_US'}) }}">
+            {{ "localisation.locale.english-us" | trans }}
+        </a>
+    </li>
+    <li>
+        <a
+                href="{{ path("language_change", {'locale':  'en_GB'}) }}">
+            {{ "localisation.locale.english-gb" | trans }}
+        </a>
+    </li>
+    <li>
+        <a
+                href="{{ path("language_change", {'locale':  'pl_PL'}) }}">
+            {{ "localisation.locale.polish-pl" | trans }}
+        </a>
+    </li>
+</ul>
+<ul>
+    <li>
+        <a href="{{ path('dashboard') }}">Dashboard</a>
+    </li>
+    <li>
+        <a href="{{ path('article_list') }}">Article List</a>
+    </li>
+</ul>
+{% block body %}{% endblock %}
+{% block javascripts %}{% endblock %}
+</body>
 </html>

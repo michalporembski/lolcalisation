@@ -12,16 +12,15 @@ class DashboardController extends Controller
      */
     public function number()
     {
-        dump($this->get('translator')->trans('Hello World'));
-        $number = mt_rand(0, 10);
-
-        return $this->render('dashboard.html.twig', [
-            'number' => $number,
-            'prularForm' => $this->getPolishPrularForm($number),
-        ]);
+        return $this->render('dashboard.html.twig');
     }
 
-    private function getPolishPrularForm(int $number)
+    /**
+     * @param int $number
+     *
+     * @return int
+     */
+    private function getPolishPluralForm(int $number): int
     {
         if ($number === 0 || $number === 1) {
             return $number;

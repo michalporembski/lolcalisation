@@ -35,7 +35,7 @@ class ArticleRepository extends ServiceEntityRepository
      */
     public function getArticles(ArticleSearchDto $articleSearchDto): array
     {
-        $qb = $this->getBaseTrainingListQuery()
+        $qb = $this->getBaseArticleListQuery()
             ->orderBy('a.id', 'DESC');
 
         $qb = $this->applyFilters($qb, $articleSearchDto);
@@ -56,7 +56,7 @@ class ArticleRepository extends ServiceEntityRepository
      * @throws NoResultException
      * @throws NonUniqueResultException
      */
-    public function getTrainingsCount(ArticleSearchDto $articleSearchDto)
+    public function getArticleCount(ArticleSearchDto $articleSearchDto)
     {
         $qb = $this->_em->createQueryBuilder()
             ->select('count(t.id)')
@@ -87,7 +87,7 @@ class ArticleRepository extends ServiceEntityRepository
     /**
      * @return QueryBuilder
      */
-    private function getBaseTrainingListQuery(): QueryBuilder
+    private function getBaseArticleListQuery(): QueryBuilder
     {
         return $this->_em->createQueryBuilder()
             ->select('a', 'u')

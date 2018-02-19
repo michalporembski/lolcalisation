@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Article;
 use App\Entity\Form\ArticleSearchDto;
 use App\Form\ArticleSearchType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -31,7 +32,7 @@ class ArticleController extends Controller
         $form = $this->createForm(ArticleSearchType::class, $articleSearchDto);
         $form->handleRequest($request);
 
-        $repo = $this->get('app.repository.article');
+        $repo = $this->getDoctrine()->getRepository(Article::class);
         $articleSearchDto->setItemCount($repo->getArticleCount($articleSearchDto));
         $items = $repo->getArticles($articleSearchDto);
 

@@ -1,0 +1,4 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    {{ 'localisation.messages.other.found-records'|transchoice(1, {'%number%': articleSearchDto.itemCount}) }}
+{% endblock %}

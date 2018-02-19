@@ -41,7 +41,6 @@ class ArticleSearchType extends AbstractType
                 TextType::class,
                 [
                     'label' => 'article.form.labels.title',
-                    'placeholder' => '---',
                     'required' => false
                 ]
             )
